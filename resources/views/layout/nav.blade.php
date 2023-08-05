@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg bg-warning border-bottom border-bottom-primary ticky-top bg-body-warning"
-data-bs-theme="warning">
+<nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-primary ticky-top bg-body-dark"
+data-bs-theme="dark">
 <div class="container">
     <a class="navbar-brand fw-light" href="/"><span class="fas fa-brain me-1"> </span>{{config('app.name')}}</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
