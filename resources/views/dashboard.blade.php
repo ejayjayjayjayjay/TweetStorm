@@ -10,14 +10,16 @@
                 @include('includes.submit-tweet')
 
             <hr>
-            @foreach ($tweets as $tweet)
+            @forelse ($tweets as $tweet)
                 <div class="mt-3">
                     @include('includes.tweet-card')
                 </div>
-            @endforeach
+            @empty
+                <p class="text-center mt-3">No Results Found.</p>
+            @endforelse
 
-            <div>
-                {{ $tweets->links() }}
+            <div class="mt-3">
+                {{ $tweets->withQueryString()->links() }}
             </div>
         </div>
         <div class="col-3">
