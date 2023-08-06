@@ -43,7 +43,11 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function ideas() {
-        return $this->hasMany(Idea::class);
+    public function tweets() {
+        return $this->hasMany(Tweet::class)->latest();
+    }
+
+    public function comments() {
+        return $this->hasMany(Comment::class)->latest();
     }
 }

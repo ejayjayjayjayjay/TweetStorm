@@ -8,7 +8,6 @@
         <div class="col-6">
                 @include('includes.success-message')
                 @include('includes.submit-tweet')
-
             <hr>
             @forelse ($tweets as $tweet)
                 <div class="mt-3">

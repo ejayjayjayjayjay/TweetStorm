@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\TweetController;
 use App\Models\Tweet;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\TweetController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,5 @@ Route::group(['prefix'=>'tweets/','as' => 'tweets.'],function(){
         Route::post('/{id}/comments',[CommentController::class, 'store'])->name('comments.store');
     });
 });
+
+Route::resource('users', UserController::class)->only('show','edit','update')->middleware('auth');
